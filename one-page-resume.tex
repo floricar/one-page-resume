@@ -1,0 +1,189 @@
+\documentclass{article}
+\usepackage[cm]{fullpage}
+\usepackage{color}
+\usepackage{hyperref}
+
+\hypersetup{breaklinks=true,%
+pagecolor=white,%
+colorlinks=true,%
+linkcolor=cyan,%
+urlcolor=MyDarkBlue}
+
+\definecolor{MyDarkBlue}{rgb}{0,0.0,0.45}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Formatting parameters  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newlength{\tabin}
+\setlength{\tabin}{1em}
+\newlength{\secsep}
+\setlength{\secsep}{0.1cm}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+\definecolor{contactgray}{gray}{0.3}
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Template Definitions  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-6pt} \hrulefill \\ \vspace*{-15pt}}
+\newcommand{\name}[1]{\begin{center}\textsc{\Huge#1}\\\end{center}}
+\newcommand{\program}[1]{\begin{center}\textsc{#1}\end{center}}
+\newcommand{\contact}[1]{\begin{center}\color{contactgray}{\small#1}\end{center}}
+
+\newenvironment{tabbedsection}[1]{
+  \begin{list}{}{
+      \setlength{\itemsep}{0pt}
+      \setlength{\labelsep}{0pt}
+      \setlength{\labelwidth}{0pt}
+      \setlength{\leftmargin}{\tabin}
+      \setlength{\rightmargin}{\tabin}
+      \setlength{\listparindent}{0pt}
+      \setlength{\parsep}{0pt}
+      \setlength{\parskip}{0pt}
+      \setlength{\partopsep}{0pt}
+      \setlength{\topsep}{#1}
+    }
+  \item[]
+}{\end{list}}
+
+\newenvironment{nospacetabbing}{
+    \begin{tabbing}
+}{\end{tabbing}\vspace{-1.2em}}
+
+\newenvironment{resume_header}{}{\vspace{0pt}}
+
+
+\newenvironment{resume_section}[1]{
+  \filbreak
+  \vspace{2\secsep}
+  \textsc{\large#1}
+  \lineunder
+  \begin{tabbedsection}{\secsep}
+}{\end{tabbedsection}}
+
+\newenvironment{resume_subsection}[2][]{
+  \textbf{#2} \hfill {\footnotesize #1} \hspace{2em}
+  \begin{tabbedsection}{0.5\secsep}
+}{\end{tabbedsection}}
+
+\newenvironment{subitems}{
+  \renewcommand{\labelitemi}{-}
+  \begin{itemize}
+      \setlength{\labelsep}{1em}
+}{\end{itemize}}
+
+\newenvironment{resume_employer}[4]{
+  \vspace{\secsep}
+  \textbf{#1} \\ 
+  \indent {\small #2} \hfill {\footnotesize#3 (#4)}
+  \begin{tabbedsection}{0pt}
+  \begin{subitems}
+}{\end{subitems}\end{tabbedsection}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Start Document     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{resume_header}
+\name{Carlos Flury}
+\program{Data Scientist - Curious human}
+\contact{\href{mailto:car.flury@gmail.com}{car.flury@gmail.com} \hspace{1cm} \href{https://linkedin.com/in/charlesflury}{linkedin} \hspace{1cm} \href{https://floricar.github.io}{website}}
+\end{resume_header}
+
+\begin{resume_section}{About Me}
+  \begin{nospacetabbing}
+  \textbf{Technical Skills}  \= Python, SQL, machine and deep learning python packages, PowerBI, Linux/Ubuntu \\*
+  \textbf{Languages} \> Native in Spanish; Elementary proficiency in German and Italian\\*
+  \textbf{Interests} \> Data Science, Finance, Cryptocurrencies\\*
+  \end{nospacetabbing}
+\end{resume_section}
+
+\begin{resume_section}{Work Experience}
+  \begin{resume_employer}{Bolsa de Comercio de Rosario}{Data Scientist}{Rosario, Argentina}{Jan 2019 - Present}
+    \item analyzing, developing and deploying deep learning models for an image classification and segmentation problem, aim for a predictor API 
+    \item developing and generating Power BI reports according end-users requests and for biz insights findings
+    \item tech stack: python, keras, tensorflow
+  \end{resume_employer}
+  
+  \begin{resume_employer}{}{Digital Transformation Lead}{Rosario, Argentina}{Jan 2020 - Present}
+    \item working on re-skilling BCR employees and giving them a larger digital tools box
+    \item working on understanding internal processes and proposing digital and efficiency transformations on them
+  \end{resume_employer}
+  
+  \begin{resume_employer}{}{Professor}{Rosario, Argentina}{Dec 2019 - April 2021}
+    \item taught three sixteen hours python courses for non technical students, elementary or basic level
+  \end{resume_employer}
+  
+  \begin{resume_employer}{Method Data Science}{Community Data Scientist}{Argentina, remote}{Nov 2018 - March 2019}
+    \item developed a look-a-like feature from social media data for a digital marketing agency
+    \item developed a machine learning model for prediction on knee displacement, given a national US medical data set (anonymized)
+    \item tech stack: python, data science and visualization packages
+  \end{resume_employer}
+  
+  \begin{resume_employer}{Inteligencia Analitica}{Business Intelligence Consultant}{Argentina, Rosario}{Nov 2017 - Nov 2018}
+    \item developed minor ETL processes with Microsoft Visual Stuadio Integration Services for version migration
+    \item worked as a data analyst side by side with end users for reports and dashboards generation
+    \item tech stack: VS Integration Services, SQL, SAP BOE platform (Web Intelligence specifically)
+  \end{resume_employer}
+  
+  \begin{resume_employer}{Universidad Tecnologica Nacional - Research Department}{Data Science and Big Data Researcher}{Argentina, Rosario}{Nov 2016 - Nov 2018}
+    \item a social media data research on how digital phenomenons could become a presence/physical event
+    \item a survey on NLP methods for text comparison, proposing a novel method for Q and A recommendation systems
+    \item tech stack: python and scientific packages for data analysis
+  \end{resume_employer}
+  
+  \begin{resume_employer}{AIRES: Analisis Inteligente en Redes Sociales}{Data Mining Engineer and Founder}{Argentina, Rosario}{Nov 2016 - Nov 2017}
+    \item developed a sentiment analysis and impact statistics dashboard from Twitter data 
+    \item developed a clustering and association tool for Twitter audience aiming to discover new groups and their characteristics
+    \item developed a potentially impact prediction feature
+    \item tech stack: python, mysql, ec2 instances on aws
+  \end{resume_employer}  
+\end{resume_section}
+
+\begin{resume_section}{Education}
+  \begin{resume_subsection}[Rosario, Arg (2020--Present)]{Austral University}{MsC in Finance}
+    \begin{subitems}
+      \item three main verticals: capital markets, corporate finance and investment projects
+      \item potentially writing a thesis on valuation and/or cryptoassets
+    \end{subitems}
+    \end{resume_subsection}
+  \begin{resume_subsection}[Rosario, Arg (2013--2018)]{Universidad Tecnologica Nacional}{BE in Computer Software Engineering}
+    \begin{subitems}
+      \item Computer Software Engineering degree with a 7.92 grade average
+      \item studied maths, statistics, software engineering, management and data mining
+    \end{subitems}
+    \end{resume_subsection}
+  \begin{resume_subsection}[Buenos Aires, Arg (2018)]{Austral University}{DE on Applied Data Science}
+    \begin{subitems}
+      \item curricula included data analysis, data mining techniques, text mining techniques
+      \item a final practical laboratory was done with a kaggle competition
+    \end{subitems}
+    \end{resume_subsection}
+  \begin{resume_subsection}[Rosario, Arg (2017)]{Austral University}{DE on Business Intelligence}
+    \begin{subitems}
+      \item curricula included intelligent data analysis, data warehousing, data mining, balance scoreboard and decision systems
+    \end{subitems}
+  \end{resume_subsection}
+\end{resume_section}
+
+\begin{resume_section}{Volunteering Experiences}
+  \begin{resume_subsection}[(Jul 2021 - Present)]{Global Shapers Community, Rosario Hub}
+    \begin{subitems}  
+      \item collaborating as the Impact Officer of the hub for impact measuring and guaranteeing
+      \item participating in several projects that aimed to generate local impact on three verticals: sustainability, education and employment and equity and inclusion
+    \end{subitems}
+  \end{resume_subsection}
+\end{resume_section}
+
+\end{document}
