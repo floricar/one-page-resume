@@ -16,9 +16,9 @@ urlcolor=MyDarkBlue}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newlength{\tabin}
-\setlength{\tabin}{1em}
+\setlength{\tabin}{0.5em}
 \newlength{\secsep}
-\setlength{\secsep}{0.1cm}
+\setlength{\secsep}{0.05cm}
 
 \setlength{\parindent}{0in}
 \setlength{\parskip}{0in}
@@ -63,7 +63,7 @@ urlcolor=MyDarkBlue}
 
 \newenvironment{resume_section}[1]{
   \filbreak
-  \vspace{2\secsep}
+  \vspace{1\secsep}
   \textsc{\large#1}
   \lineunder
   \begin{tabbedsection}{\secsep}
@@ -71,7 +71,7 @@ urlcolor=MyDarkBlue}
 
 \newenvironment{resume_subsection}[2][]{
   \textbf{#2} \hfill {\footnotesize #1} \hspace{2em}
-  \begin{tabbedsection}{0.5\secsep}
+  \begin{tabbedsection}{0.25\secsep}
 }{\end{tabbedsection}}
 
 \newenvironment{subitems}{
@@ -103,31 +103,37 @@ urlcolor=MyDarkBlue}
 
 \begin{resume_section}{About Me}
   \begin{nospacetabbing}
-  \textbf{Technical Skills}  \= Python, SQL, machine and deep learning python packages, scheduler tooling, Linux/Ubuntu/Unix \\*
+  \textbf{Technical Skills}  \= python, sql, data science, data engineering, AI \\*
   \textbf{Languages} \> Native Spanish; Fluent English; Elementary German and Italian\\*
-  \textbf{Interests} \> Data Science Engineering, Finance, Cryptocurrencies\\*
+  \textbf{Interests} \> AI, Finance, technology and businesses \\*
   \end{nospacetabbing}
 \end{resume_section}
 
 \begin{resume_section}{Work Experience}
-  \begin{resume_employer}{Solvd.}{Data Engineer}{Argentina}{Aug 2022 - Present}
-    \item work as an augmented DE for fintech client in core DE team for maintenance and enhancements of DW
+  \begin{resume_employer}{Trafilea}{Sr Data Engineer}{Argentina}{Aug 2023 - Present}
+    \item maintaining and enhancing the data warehouse for the marketing team
+    \item leading an AI project based on LLMs and AI agents for improving inhouse marketing processes
+    \item tech stack: python, sql, aws services, redshift, airflow, segment/CDP, AI and LLM models
+  \end{resume_employer}
+  
+  \begin{resume_employer}{Solvd.}{Data Engineer}{Argentina}{Aug 2022 - Aug 2023}
+    \item worked as DE for fintech client to maintain and enhance DW and pipelines
     \item tech stack: python, sql, aws services, snowflake, airflow
   \end{resume_employer}
   
   \begin{resume_employer}{Mutt Data}{Data Developer}{Argentina}{Oct 2021 - Aug 2022}
-    \item work on data pipelines for default lending predictions and fraud detection for a telco customer
-    \item work on an internal utility library
+    \item developed data pipelines for fraud detection and default lending on a telco client
+    \item worked on an internal utility library
     \item tech stack: python, docker, psql
   \end{resume_employer}
 
   \begin{resume_employer}{Bolsa de Comercio de Rosario}{Data Scientist / Digital Transformation Lead / Professor}{Rosario, Argentina}{Jan 2019 - Oct 2021}
-    \item DS: analyzing, developing and deploying deep learning models for an image classification and segmentation problem, aim for a predictor API 
-    \item DS: developing and generating Power BI reports according end-users requests and for biz insights findings
+    \item DS: analyzed, developed and deployed deep learning models for an image classification and segmentation problem served throughout an API
+    \item DS: developed Power BI reports according end-users requests
     \item DS: tech stack: python, keras, tensorflow
-    \item DTL: working on re-skilling BCR employees and giving them a larger digital tools box
-    \item DTL: working on understanding internal processes and proposing digital and efficiency transformations on them
-    \item P: taught three sixteen hours python courses for non technical students, elementary or basic level
+    \item DTL: worked on re-skilling employees and provided a new daily tool-box
+    \item DTL: improved internal processes by transforming them leveraging technology
+    \item P: taught three 16-hours python courses at elemntary level (non-tech students)
   \end{resume_employer}
   
   \begin{resume_employer}{Method Data Science}{Community Data Scientist}{Argentina, remote}{Nov 2018 - March 2019}
